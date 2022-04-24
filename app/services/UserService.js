@@ -5,12 +5,18 @@ class UserService{
         return new User(id, username, name, "Sin bio")
     }
     
-    static getInfo(user = new User()){
+    static getInfo(user){
         return [user.id, user.userName, user.name, user.bio]
     }
 
-    static updateUserUsername(user = new User(), username){
+    static updateUserUsername(user, username){
         user.setUsername = username
+    }
+
+    static getAllUsernames(users){
+        const rUsers = []
+        users.forEach(user => rUsers.push(user.userName));
+        return rUsers
     }
 
 }
